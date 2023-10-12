@@ -1,0 +1,22 @@
+<ion-header>
+        <ion-back-button defaultHref="/home"></ion-back-button>
+ </ion-header>
+
+<ion-content>
+  <ion-card *ngFor="let forecast of forecasts">
+
+    <ion-item lines="none">
+      <p>Today's Report</p>
+      <ion-label slot="end">{{todayDate | date: "EEE dd MMM"}}</ion-label>
+    </ion-item>
+    <ion-item>
+      Temperature: {{ forecast.main.temp }}°C<br>
+      Description: {{ forecast.weather[0].description }}
+    </ion-item>
+    <ion-item>
+      <ion-icon name="location"></ion-icon>
+        <span>{{name}}</span>
+      </ion-item>
+  </ion-card>
+</ion-content>
+

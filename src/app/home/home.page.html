@@ -1,20 +1,23 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+    <ion-title>Welcome to Weather App</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+<ion-content>
+  <ion-router-outlet></ion-router-outlet>
 </ion-content>
+  
+<ion-tabs>
+  <ion-tab-bar>
+    <ion-button tab="current-weather"  [routerLink]="'/home/current-weather'">
+      <ion-icon name="sunny"></ion-icon>
+      <ion-label>Current</ion-label>
+    </ion-button>
+
+    <ion-button tab="weather-forecast" [routerLink]="'/home/weather-forecast'">
+      <ion-icon name="partly-sunny"></ion-icon>
+      <ion-label>Forecast</ion-label>
+    </ion-button>
+  </ion-tab-bar>
+</ion-tabs>
